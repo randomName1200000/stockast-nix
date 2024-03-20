@@ -12,6 +12,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [ pkgs.llvmPackages_13.openmp ];
   installPhase = ''
     mkdir -p $out/bin
+    cp data.csv $out/bin/data.csv
     cp stockast $out/bin/stockast
   '';
 }
