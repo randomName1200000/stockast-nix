@@ -29,12 +29,13 @@
 ##
 
 CXX ?= g++
-CXXFLAGS=-std=c++14 -O3
+CXXFLAGS=-std=c++14 -O3 -fopenmp
+LDFLAGS=-fopenmp
 
 OBJECTS=stockast.o
 
 stockast: $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $(OBJECTS) -o stockast
+	$(CXX) $(CXXFLAGS) $(OBJECTS) -o stockast $(LDFLAGS)
 
 stockast.o: stockast.cpp
 
